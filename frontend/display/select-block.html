@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Block - Display Screen</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-btn {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      background: none;
+      border: none;
+      color: #4f8cff;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: color 0.2s;
+    }
+    .back-btn:hover {
+      color: #fff;
+    }
+    .block-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      min-width: 340px;
+      position: relative;
+    }
+    h2 {
+      color: #4f8cff;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .blocks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .block-card {
+      background: #232526;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.13);
+      padding: 1.5rem 2.5rem;
+      min-width: 160px;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .block-card:hover {
+      background: #4f8cff;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+      transform: translateY(-4px) scale(1.04);
+    }
+    .block-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="window.location.href='../../index.html'" title="Back to Home"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="block-container">
+    <h2><i class="fa-solid fa-layer-group"></i> Select Block for Display</h2>
+    <div class="blocks">
+      <div class="block-card" data-block="1"><i class="fa-solid fa-building"></i> Block 1</div>
+      <div class="block-card" data-block="2"><i class="fa-solid fa-building"></i> Block 2</div>
+      <div class="block-card" data-block="3"><i class="fa-solid fa-building"></i> Block 3</div>
+      <div class="block-card" data-block="4"><i class="fa-solid fa-building"></i> Block 4</div>
+      <div class="block-card" data-block="5"><i class="fa-solid fa-building"></i> Block 5</div>
+      <div class="block-card" data-block="6"><i class="fa-solid fa-building"></i> Block 6</div>
+      <div class="block-card" data-block="7"><i class="fa-solid fa-building"></i> Block 7</div>
+      <div class="block-card" data-block="8"><i class="fa-solid fa-building"></i> Block 8</div>
+      <div class="block-card" data-block="Amenity 1"><i class="fa-solid fa-couch"></i> Amenity 1</div>
+      <div class="block-card" data-block="Amenity 2"><i class="fa-solid fa-couch"></i> Amenity 2</div>
+      <div class="block-card" data-block="Large Dining"><i class="fa-solid fa-utensils"></i> Large Dining</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.block-card').forEach(card => {
+      card.onclick = function() {
+        const block = encodeURIComponent(this.getAttribute('data-block'));
+        window.location.href = `index.html?block=${block}`;
+      };
+    });
+  </script>
+</body>
+</html> 

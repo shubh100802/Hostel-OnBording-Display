@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Onboarding - Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #f7faff 0%, #e3e6f3 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .home-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    h1 {
+      color: #2c3e50;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .accent {
+      color: #4f8cff;
+    }
+    .actions {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      justify-content: center;
+    }
+    .action-btn {
+      background: linear-gradient(90deg, #4f8cff 0%, #2c3e50 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .action-btn:hover {
+      background: linear-gradient(90deg, #2c3e50 0%, #4f8cff 100%);
+      box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+    }
+  </style>
+</head>
+<body>
+  <div class="home-container">
+    <h1><i class="fa-solid fa-building-user"></i> <span class="accent">Hostel Onboarding</span></h1>
+    <div class="actions">
+      <button class="action-btn" id="adminBtn"><i class="fa-solid fa-user-gear"></i> Admin Login</button>
+      <button class="action-btn" id="displayBtn"><i class="fa-solid fa-tv"></i> Display Screen</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('adminBtn').onclick = function() {
+      window.location.href = `admin/login.html`;
+    };
+    document.getElementById('displayBtn').onclick = function() {
+      window.location.href = `display/select-block.html`;
+    };
+  </script>
+</body>
+</html> 

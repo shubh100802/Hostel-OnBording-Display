@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Onboarding Display</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-tv"></i> Hostel Onboarding <span class="accent">Live Display</span></h1>
+  </header>
+  <main>
+    <section id="displayCounters"></section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="display.js"></script>
+  <audio id="attention-audio" src="attention.mp3" preload="auto"></audio>
+</body>
+</html> 

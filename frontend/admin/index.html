@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Onboarding Admin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="display: flex; align-items: center; justify-content: space-between;">
+    <h1><i class="fa-solid fa-user-gear"></i> Hostel Onboarding <span class="accent">Admin Panel</span></h1>
+    <button id="logoutBtn" style="background: none; border: none; color: #e74c3c; font-size: 1.5rem; cursor: pointer; margin-left: 2rem;" title="Logout">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
+  </header>
+  <main>
+    <section id="counter-config" class="card">
+      <label for="counterCount"><i class="fa-solid fa-layer-group"></i> Number of Counters:</label>
+      <input type="number" id="counterCount" min="1" value="3">
+      <button id="setCountersBtn"><i class="fa-solid fa-sliders"></i> Set Counters</button>
+    </section>
+    <section class="card">
+      <h2><i class="fa-solid fa-list-ol"></i> Queue</h2>
+      <ul id="queueList"></ul>
+    </section>
+    <section class="card">
+      <h2><i class="fa-solid fa-desktop"></i> Counters</h2>
+      <div id="counters"></div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="admin.js"></script>
+  <script>
+    document.getElementById('logoutBtn').onclick = function() {
+      // Remove token/session if stored
+      localStorage.removeItem('token');
+      window.location.href = 'login.html';
+    };
+  </script>
+</body>
+</html> 
